@@ -2,8 +2,15 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap");
 
+:root {
+  --primary-color: #ebd8ff;
+  --secondary-text-color: #373737;
+  --accent-color: #5cd3a8;
+}
+
 body {
   margin: 0;
+  line-height: 1.2;
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,6 +28,7 @@ img {
 }
 
 button {
+  border: none;
   padding: 0;
   cursor: pointer;
 }
