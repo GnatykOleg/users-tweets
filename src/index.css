@@ -6,6 +6,7 @@
   --primary-color: #ebd8ff;
   --secondary-text-color: #373737;
   --accent-color: #5cd3a8;
+  --white: #fff;
 }
 
 body {
@@ -54,4 +55,18 @@ h5,
 h6 {
   padding: 0;
   margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

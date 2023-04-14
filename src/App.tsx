@@ -1,7 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 
-function App() {
-  return <div className="App">Users Tweets</div>;
-}
+import PagesRoutes from "./PagesRoutes/PagesRoutes";
+
+import { Header } from "./components";
+
+const App: FC = () => {
+  return (
+    <>
+      <Header />
+      <PagesRoutes />
+    </>
+  );
+};
 
 export default App;

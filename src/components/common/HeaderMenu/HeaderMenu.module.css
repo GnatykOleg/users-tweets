@@ -1,0 +1,46 @@
+.list {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-around;
+
+  padding: 15px;
+}
+
+.link {
+  padding-bottom: 13px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  color: var(--white);
+
+  transition: all 250ms linear;
+}
+
+.linkActive {
+  padding-bottom: 13px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  color: var(--accent-color);
+
+  border-bottom: 2px solid var(--accent-color);
+
+  transition: all 250ms linear;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--accent-color);
+
+  border-bottom: 2px solid var(--accent-color);
+}
