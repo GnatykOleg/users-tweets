@@ -1,0 +1,42 @@
+.list {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-around;
+
+  padding: var(--primary-spacing);
+}
+
+.link {
+  padding-bottom: var(--primary-spacing);
+
+  font-size: var(--fs-18);
+
+  font-weight: var(--semi-bold);
+
+  text-transform: uppercase;
+
+  color: var(--white);
+
+  transition: var(--transition);
+}
+
+.linkActive {
+  padding-bottom: var(--primary-spacing);
+
+  font-size: var(--fs-18);
+
+  font-weight: var(--semi-bold);
+
+  text-transform: uppercase;
+
+  color: var(--accent-color);
+
+  transition: var(--transition);
+}
+
+.link:hover,
+.link:focus {
+  color: var(--accent-color);
+}
