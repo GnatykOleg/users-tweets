@@ -1,4 +1,19 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
+
+import { updateUserOperation } from "../../../redux/tweets/tweetsOperations";
+
+import {
+  addToFollowingList,
+  deleteFromFollowingList,
+} from "../../../redux/tweets/tweetsSlice";
+
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux-hooks";
+
+import { getTweetsDataSelector } from "../../../redux/tweets/tweetsSelectors";
+
+import { ICardProps } from "../../../types/components-types/components-types";
+
+import { COLORS } from "../../../conts/colors-const";
 
 import { PrimaryButton } from "../../index";
 
@@ -8,51 +23,59 @@ import sprite from "../../../assets/icons/sprite.svg";
 
 import s from "./Card.module.css";
 
-const Card: FC = () => {
-  const [isFollowing, setIsFollowing] = useState<boolean>(false);
+const Card: FC<ICardProps> = ({ user }: ICardProps) => {
+  const dispatch = useAppDispatch();
+
+  const { followingList } = useAppSelector(getTweetsDataSelector);
+
+  const { avatar, followers, id, tweets } = user;
+
+  const isFollowing = followingList.includes(id);
+
+  const followersWithComma = `${followers.toLocaleString("en")} followers`;
 
   const onClick = () => {
-    setIsFollowing((state) => !state);
+    dispatch(
+      updateUserOperation({
+        followers: isFollowing ? followers - 1 : followers + 1,
+        id: id,
+      })
+    );
 
-    // Добавляем +1 к фоллеверам
+    dispatch(
+      isFollowing ? deleteFromFollowingList(id) : addToFollowingList(id)
+    );
   };
 
-  const buttonText = isFollowing ? "Following" : "Follow";
-
-  const buttonBackgroung = { background: isFollowing ? "#5CD3A8" : "#EBD8FF" };
-
   return (
-    <ul>
-      <li className={s.item}>
-        <svg className={s.logo} width={76} height={22}>
-          <use href={`${sprite}#logo`}></use>
-        </svg>
+    <li className={s.item}>
+      <svg className={s.logo} width={76} height={22}>
+        <use href={`${sprite}#logo`}></use>
+      </svg>
 
-        <img src={messagesIcons} alt="messages icons" />
+      <img src={messagesIcons} alt="messages icons" />
 
-        <div className={s.divider} />
+      <div className={s.divider} />
 
-        <div className={s.circle}>
-          <img
-            className={s.avatar}
-            src="https://cdn.pixabay.com/photo/2017/02/04/22/37/panther-2038656_960_720.png"
-            alt="user avatar"
-          />
-        </div>
+      <div className={s.circle}>
+        <img className={s.avatar} src={avatar} alt="user avatar" />
+      </div>
 
-        <div className={s.textWrapper}>
-          <p className={s.text}>777 tweets</p>
+      <div className={s.textWrapper}>
+        <p className={s.text}>{`${tweets} tweets`}</p>
 
-          <p className={s.text}>100,50 Followers</p>
-        </div>
+        <p className={s.text}>{followersWithComma}</p>
+      </div>
 
-        <PrimaryButton
-          text={buttonText}
-          onClick={onClick}
-          inlineStyle={buttonBackgroung}
-        />
-      </li>
-    </ul>
+      <PrimaryButton
+        text={isFollowing ? "Following" : "Follow"}
+        onClick={onClick}
+        inlineStyles={{
+          background: isFollowing ? COLORS.accentColor : COLORS.primaryColor,
+          margin: "0 auto",
+        }}
+      />
+    </li>
   );
 };
 

@@ -1,0 +1,29 @@
+.section {
+  padding: var(--section-padding);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    flex-direction: unset;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: var(--primary-spacing);
+  }
+}
+
+.headerButtonsWrapper {
+  display: flex;
+  justify-content: space-between;
+
+  padding-left: var(--primary-spacing);
+  padding-right: var(--primary-spacing);
+
+  margin-bottom: 50px;
+}
