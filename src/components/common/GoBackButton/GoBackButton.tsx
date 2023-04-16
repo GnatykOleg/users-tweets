@@ -13,6 +13,7 @@ const GoBackButton: FC = () => {
 
   return (
     <button
+      aria-label="got to home page button"
       className={s.buttonBack}
       type="button"
       onClick={() => navigate(ROUTES.HOME)}

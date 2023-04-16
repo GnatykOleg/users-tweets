@@ -49,16 +49,22 @@ const Card: FC<ICardProps> = ({ user }: ICardProps) => {
 
   return (
     <li className={s.item}>
-      <svg className={s.logo} width={76} height={22}>
+      <svg className={s.logo} width={76}>
         <use href={`${sprite}#logo`}></use>
       </svg>
 
-      <img src={messagesIcons} alt="messages icons" />
+      <img width={308} height={168} src={messagesIcons} alt="messages icons" />
 
       <div className={s.divider} />
 
       <div className={s.circle}>
-        <img className={s.avatar} src={avatar} alt="user avatar" />
+        <img
+          width={80}
+          height={80}
+          className={s.avatar}
+          src={avatar}
+          alt="user avatar"
+        />
       </div>
 
       <div className={s.textWrapper}>
