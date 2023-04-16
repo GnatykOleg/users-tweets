@@ -1,46 +1,60 @@
-# Getting Started with Create React App
+## Twitter cards with interactivity, a quiz with a tweet card image, and two "Home" and "Tweets" pages.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## A live version is available via the link in the About section.
 
-## Available Scripts
+### Application Description:
 
-In the project directory, you can run:
+This project is about creating cards with interactivity as a test task that changes the state of the card when the Follow button is clicked. The design of the map is based on the provided layout, and the interactivity is implemented using JavaScript.
 
-### `npm start`
+### Home page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img src="./src/assets/images/home-page.png">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Tweets page
 
-### `npm test`
+<img src="./src/assets/images/tweets-page.png">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Application functionality:
 
-### `npm run build`
+- When you click on the button in the card, the color and text of the button change. A request is made to update user data on mockapi. To simulate tracking the user who interacts with the cards, redux-persist is used, where the values of the selected cards are stored.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Pagination is implemented to display a limited number of cards per page, and the "Load more" button is used to display the next batch of cards.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- There is a filtering of cards by status in the select: all cards, cards for which we have subscribed, and cards for which we have not subscribed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- The tweets page has an arrow to return to the home page.
 
-### `npm run eject`
+- On the home page, the picture is a link that takes you to the Tweets page.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- The layout is abstract and fixed, the width of the card is always 380px, and the project implements an adaptive layout, if possible.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Additional information:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- This project uses a mockAPI service provided by mockapi.io to simulate a backend for user data. The user resource is created with the following fields:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+{
+"id": 1,
+"user": "Elon Reeve Musk",
+"tweets": 777,
+"followers": 100500,
+"avatar": "url.jpg"
+}
+```
 
-## Learn More
+### Technologies used:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Typescript
+- React
+- React Router
+- Redux Toolkit, Redux persist
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation and setup:
+
+- To run this project locally, follow these steps:
+
+- Clone the repository to your local machine.
+- Open the project in the code editor.
+- Install project dependencies with the npm install command.
+- Run the project with the npm start command.
+- Open the project in a web browser at http://localhost:3000.
