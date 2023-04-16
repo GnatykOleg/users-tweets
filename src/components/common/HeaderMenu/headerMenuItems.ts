@@ -1,15 +1,17 @@
-import { ROUTES } from "../../../conts/routes";
+import { nanoid } from "@reduxjs/toolkit";
+
+import { ROUTES } from "../../../conts/routes-const";
 
 const { HOME, TWEETS } = ROUTES;
 
 export const headerMenuItems = [
   {
-    id: 1,
+    id: nanoid(),
     to: HOME,
     text: "home",
   },
   {
-    id: 2,
+    id: nanoid(),
     to: TWEETS,
     text: "tweets",
   },

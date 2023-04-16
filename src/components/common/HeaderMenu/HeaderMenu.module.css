@@ -5,42 +5,38 @@
 
   justify-content: space-around;
 
-  padding: 15px;
+  padding: var(--primary-spacing);
 }
 
 .link {
-  padding-bottom: 13px;
+  padding-bottom: var(--primary-spacing);
 
-  font-size: 16px;
+  font-size: var(--fs-18);
 
-  font-weight: 600;
+  font-weight: var(--semi-bold);
 
   text-transform: uppercase;
 
   color: var(--white);
 
-  transition: all 250ms linear;
+  transition: var(--transition);
 }
 
 .linkActive {
-  padding-bottom: 13px;
+  padding-bottom: var(--primary-spacing);
 
-  font-size: 16px;
+  font-size: var(--fs-18);
 
-  font-weight: 600;
+  font-weight: var(--semi-bold);
 
   text-transform: uppercase;
 
   color: var(--accent-color);
 
-  border-bottom: 2px solid var(--accent-color);
-
-  transition: all 250ms linear;
+  transition: var(--transition);
 }
 
 .link:hover,
 .link:focus {
   color: var(--accent-color);
-
-  border-bottom: 2px solid var(--accent-color);
 }

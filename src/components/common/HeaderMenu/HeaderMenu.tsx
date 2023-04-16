@@ -2,6 +2,8 @@ import React, { FC } from "react";
 
 import { NavLink } from "react-router-dom";
 
+import { nanoid } from "@reduxjs/toolkit";
+
 import { headerMenuItems } from "./headerMenuItems";
 
 import s from "./HeaderMenu.module.css";
@@ -13,7 +15,7 @@ const getLink = ({ isActive }: { isActive: boolean }) => {
 const HeaderMenu: FC = () => (
   <ul className={s.list}>
     {headerMenuItems.map(({ to, text }) => (
-      <li>
+      <li key={nanoid()}>
         <NavLink to={to} className={getLink}>
           {text}
         </NavLink>

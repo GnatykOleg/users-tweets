@@ -1,4 +1,4 @@
-.button {
+.select {
   display: block;
 
   padding: 14px 39px;
@@ -12,16 +12,11 @@
 
   font-weight: var(--fw-semi-bold);
 
-  text-transform: uppercase;
-
   color: var(--secondary-text-color);
 
   border-radius: 10px;
 
-  transition: var(--transition);
-}
+  background: var(--primary-color);
 
-.button:hover,
-.button:focus {
-  scale: 1.05;
+  border: none;
 }
