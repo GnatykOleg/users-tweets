@@ -1,0 +1,5 @@
+.header {
+  background: var(--primary--bg-gradient);
+
+  box-shadow: var(--primary-box-shadow);
+}

@@ -23,7 +23,11 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor} loading={<Loader />}>
+
         <BrowserRouter basename="/users-tweets">
+
+   
+
           <App />
         </BrowserRouter>
       </PersistGate>
