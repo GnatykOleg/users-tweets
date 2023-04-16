@@ -49,7 +49,7 @@ const Card: FC<ICardProps> = ({ user }: ICardProps) => {
 
   return (
     <li className={s.item}>
-      <svg className={s.logo} width={76}>
+      <svg className={s.logo} width={76} height={22}>
         <use href={`${sprite}#logo`}></use>
       </svg>
 
