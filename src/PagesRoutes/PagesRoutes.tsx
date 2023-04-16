@@ -16,6 +16,7 @@ const PagesRoutes: FC = () => {
       <Routes>
         <Route path={ROUTES.HOME} element={<HomePage />} />
         <Route path={ROUTES.TWEETS} element={<TweetsPage />} />
+        <Route path={ROUTES.NOT_FOUND} element={<HomePage />} />
       </Routes>
     </Suspense>
   );
