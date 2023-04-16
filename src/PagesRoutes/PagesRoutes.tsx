@@ -2,7 +2,7 @@ import React, { FC, Suspense, lazy } from "react";
 
 import { Route, Routes } from "react-router-dom";
 
-import { ROUTES } from "../conts/routes";
+import { ROUTES } from "../conts/routes-const";
 
 import { Loader } from "../components";
 

@@ -1,0 +1,11 @@
+.buttonBack {
+  border: none;
+  background: none;
+
+  transition: var(--transition);
+}
+
+.buttonBack:hover,
+.buttonBack:focus {
+  scale: 1.3;
+}

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { COLORS } from "../../../conts/colors";
+import { COLORS } from "../../../conts/colors-const";
 
 import { Comment } from "react-loader-spinner";
 

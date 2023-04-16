@@ -5,15 +5,15 @@ import { IPrimaryButtonProps } from "../../../types/components-types/components-
 import s from "./PrimaryButton.module.css";
 
 const PrimaryButton: FC<IPrimaryButtonProps> = ({
-  text,
+  text = "Button text",
   onClick,
-  inlineStyle,
+  inlineStyles,
 }: IPrimaryButtonProps) => (
   <button
     onClick={onClick}
     className={s.button}
     type="button"
-    style={inlineStyle}
+    style={inlineStyles}
   >
     {text}
   </button>
